@@ -1,0 +1,161 @@
+#define _CRT_SECURE_NO_WARNINGS
+//数组 相同元素数据的集合
+// 创建—— 种类 名字 放多少个												type arr_name[]
+//#include <stdio.h>
+//int main()
+//{
+//	//完全初始化数组
+//	int math[10] = {1,2,3,4,5,6,7,8,9,10};
+//	double math1[5] = { 1.2, 1.3, 1.4, 1.5, 1.6 };					//注意浮点数有时不一定打印出准确的数字
+//
+//	//不完全初始化数组
+//	int math2[10] = { 1,2,3,4,5 };									//系统会自动补充上0，填补上没有有填上的数据位置
+//	double math3[5] = { 1.2, 1.3 };
+//
+//	int math5[2] = { 1,9 };
+//	int math6[] = { 1,9 };											//两者是一样的，前面是空的，会看后面。
+//
+//	int arr[10];//arr是数组
+//	//int 是数组元素的类型
+//	//int [10]是数组的类型												数组类型是 种类 + 元素数量
+//
+//	printf("%zu\n", sizeof(arr));
+//	printf("%zu\n", sizeof(int[10]));
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	//数组下标  (数组里面元素的编号)
+//	int math[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	//元素       1,2,3,4,5,6,7,8,9,10	
+//	//下标       0,1,2,3,4,5,6,7,8,9
+//	printf("%d\n", math[6]);											// 用编号来找元素
+//	// 更改元素 用赋值的形式
+//	math[6] = 70;
+//	printf("%d\n", math[6]);
+//	int i = 0;																//输出
+//	for (i = 0;i <= 9;i++)
+//	{
+//		printf("%d\n", math[i]);
+//	}
+//	return 0;
+//}
+
+//把元素改成负数
+//#include <stdio.h>
+//int main()
+//{
+//
+//	int math[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	printf("%d\n", math[6]);   
+//	int i = 0;
+//	for (i = 0;i <= 9;i++)
+//	{
+//		math[i] *= -1;
+//		printf("%d\n", math[i]);
+//	}
+//	return 0;
+//}
+
+//将数值输入进去
+//#include <stdio.h>
+//int main()
+//{
+//
+//	int math[10] = {0};
+//	int i = 0;
+//	int y = 0;
+//	for (i = 0;i <= 9;i++)
+//	{
+//		for (y = 1;y <= 10;y++)
+//		{
+//			math[i] = y;
+//			printf("%d\n", math[i]);
+//		}
+//		break;
+//		
+//	}
+//	return 0;
+//}\
+// 
+
+//将数值输入进去(自己打进去)
+//#include <stdio.h>
+//int main()
+//{
+//
+//	int math[10] = {0};
+//	int i = 0;
+//	int y = 0;
+//	for (i = 0;i < 10;i++)
+//	{
+//		scanf("%d", &math[i]);     //scanf不能加换行符\n  数组不用加地址，但是数组元素需要
+//	}
+//
+//	for (y = 0;y <= 9;y++)
+//	{
+//		printf("%d\n", math[y]);
+//	}
+//	return 0;
+//}
+
+//将数组的元素的地址打印出来
+// %p
+//#include <stdio.h>
+//int main()
+//{
+//
+//	int math[10] = {0,1,2,11,4,5,6,7,8,9};
+//	int i = 0;
+//	for (i = 0;i < 10;i++)
+//	{
+//		printf("&arr[%d] = %p\n", i, &math[i]);						//打印的是十六进制的  
+//
+//	}															//数组的元素的位置是连续存放的
+//
+//	return 0;											//随着数组元素下标的增长，地址是由低向高变化的
+//}
+
+//sizeof打印数组的长度
+//#include <stdio.h>
+//int main()
+//{
+//	int math[10] = { 0,1,2,3,4,5,6,7,8,9, };
+//	printf("%zu\n", sizeof(math));   //整型一个字节是 4
+//	printf("%zu\n", sizeof(math[1]));//数组元素的一个的长度
+//	int cd = sizeof(math) / sizeof(math[0]);
+//	printf("%d\n", cd);
+//	int i = 0;
+//	for (i = 0;i < cd;i++)
+//	{
+//		printf("%d ", math[i]);
+//	}
+//	return 0;
+//}
+
+//二维数组
+//二维数组的创建
+#include <stdio.h>
+int main()
+{
+	//不完全初始化——剩余的默认全部都是0
+	int math[3][5] = { 1,2,3 };    //type arr_name[][]   前面是几行，后面是每行里面有多少的元素个数 
+	int math1[3][5] = { 0 };
+	
+	//完全初始化
+	int math2[3][5] = { 1,2,3,4,5,2,3,4,5,6,4,5,6,7,8 };
+	int math3[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{4,5,6,7,8} };  //花括号再次隔开
+
+	//默认形式
+	int math4[3][5] = { 1,2 };
+	// 1 2 0 0 0
+	// 0 0 0 0 0
+	// 0 0 0 0 0
+	int math5[][5] = { 1,2 };   //元素个数不能省略
+	// 1 2 0 0 0
+	int i = 0;
+	for(i=0;i<4;i++)
+	return 0;
+}
